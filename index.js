@@ -9,7 +9,7 @@ app.use(express.json())
 app.get("/",async(req,res)=>{
     
     const {limit,skip}=req.query
-    console.log(limit,skip)
+   
     const data = await fetch(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`)
     .then((res)=>res.json())
     .catch((err)=>console.log("Error fetching data"))
