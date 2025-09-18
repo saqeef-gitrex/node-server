@@ -8,8 +8,14 @@ app.use(express.json())
 
 app.get("/",async(req,res)=>{
     
-    const {limit,skip}=req.query
-   
+    let limit = 30;
+    let skip = 0;
+
+    if(Object.keys(req.query).length>1){
+          limit = Number(req.query.limit)
+        skip = Number(req.query.skip)
+    }
+    
     const data = await fetch(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`)
     .then((res)=>res.json())
     .catch((err)=>console.log("Error fetching data"))
@@ -21,5 +27,5 @@ app.get("/",async(req,res)=>{
         data
     }).status(200)
 })
-// app.listen(process.env.PORT)
+//app.listen(process.env.PORT)
  export default app
