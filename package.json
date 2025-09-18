@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-server",
+  "version": "1.0.0",
+  "description": "First nodejs server",
+  "license": "ISC",
+  "author": "",
+  "type": "module.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  }
+}
